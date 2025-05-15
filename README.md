@@ -2,9 +2,14 @@
 
 ### Создание облачной инфраструктуры
 
+1. Создаем пользователя, навешиваем права, создаем бакет - [Backend](https://github.com/garrkiss/diplom/tree/main/terraform/backend)
 
+![Скрин]()
 
-
+Выведем secret_key 
+```
+terraform output secret_key
+```
 
 [Файл]() 
 
