@@ -78,6 +78,44 @@ kubeconfig_localhost: true
 
 ### Подготовка cистемы мониторинга и деплой приложения
 
+Устаналиваем helm
+```
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+```
+Создаем namespace monitoring
+```
+kubectl create namespace monitoring
+```
+Добавляем репозиторий
+```
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+Устаналиваем kube-prometheus-stack в неймспейс monitoring
+```
+helm install prometheus prometheus-community/kube-prometheus-stack -n monitoring
+```
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/moniroing/1.png)
 
+Проверяем поды
+```
+kubectl get pods -n monitoring
+```
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/moniroing/2.png)
 
+Получаем пароль от Grafana
+```
+kubectl get secret -n monitoring prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
+
+Настраиваем доступ к Grafana по внешнему ip адресу, для чего создаем файл values.yml
+```
+grafana:
+  service:
+    type: NodePort
+    nodePort: 31000
+```
+Обновляем helm чарт
+```
+helm upgrade prometheus prometheus-community/kube-prometheus-stack -n monitoring -f values.yaml
+```
 ### Установка и настройка CI/CD
