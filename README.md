@@ -45,6 +45,15 @@ cd kubespray/
 pip3 install -r requirements.txt
 cp -rfp inventory/sample inventory/mycluster
 ```
+2. Вносим изменения в конфигурацию
+   
+- Включаем параметры 
+```  
+ingress_nginx_enabled: true
+helm_enabled: true
+````
+3. Запускаем ansible-playbook
+   
 
 
 
