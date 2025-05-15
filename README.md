@@ -140,7 +140,7 @@ helm repo update
 ```
 
 2. Создал в своём репозиторий https://gitlab.com/garrkiss/test-app gitlab-runner для получения токена, чтобы развернуть его в Kubernetes
-![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png)
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/111.png)
 
 3. Сделан [values.yaml](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png) с полученным токеном и параметрами для настройки gitlab-runner
 
@@ -148,19 +148,35 @@ helm repo update
 ```
 helm upgrade gitlab-runner gitlab/gitlab-runner --namespace gitlab-runner -f values.yaml
 ```
-![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png)
+Проверил работу пода gitlab-runner
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/image.png)
 
-1. Cделал [.gitlab-ci.yml ]() 
+5. Cделал [.gitlab-ci.yml ]() 
+
+6. Добавил переменные в Gitlab
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/12.png)
 
 ### Demo
 1. Добавил текст v2 рядом с EEBAKULEV в index.html и выполнил
 ```
 git add . && git commit -m "gitlab" && git push
 ```
-обновился образ в Registry
-![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png)
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/1111.png)
 
-добавил тег
-![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png)
-git tag v1.0.11 && git push origin v1.0.11 и приложение развернулось с v2
-![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png)
+Pipline успешно отработали
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/1.png)
+
+Обновился образ в Registry
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/2.png)
+
+2. Сделал тег и запушил
+```
+git tag v1.0.11 && git push origin v1.0.11 
+```
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/3.png)
+
+Pipline успешно отработали
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/4.png)
+
+Сайт открытся с версией в тексте V2
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/6.png)
