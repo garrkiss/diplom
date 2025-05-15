@@ -67,9 +67,10 @@ kubeconfig_localhost: true
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/kuberspray/3.png)
 
 
-
 ### Создание тестового приложения
 
+Запушил код в [Gitlab](https://gitlab.com/garrkiss/test-app)
+В качестве Registy выбран [Docker hub](https://hub.docker.com/repository/docker/garrkiss/test-app)
 
 
 ### Подготовка cистемы мониторинга и деплой приложения
