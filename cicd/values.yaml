@@ -1,0 +1,38 @@
+gitlabUrl: "https://gitlab.com/"
+runnerRegistrationToken: ""
+runnerToken: ""
+unregisterRunners: true
+concurrent: 2
+checkInterval: 30
+
+runners:
+  name: "k8s-runner"
+  tags: "k8s,docker,deploy,test-app,production"
+  executor: kubernetes
+  config: |
+    [[runners]]
+      [runners.kubernetes]
+        namespace = "gitlab-runner"
+        image = "ubuntu:22.04"
+        privileged = true
+        cpu_request = "250m"
+        memory_request = "256Mi"
+        cpu_limit = "500m"
+        memory_limit = "512Mi"
+        service_account = "gitlab-runner" 
+      [runners.kubernetes.volumes]
+
+rbac:
+  create: true
+  clusterWideAccess: false
+  rules:
+    - apiGroups: [""]
+      resources: ["pods", "pods/exec", "pods/attach", "secrets"]
+      verbs: ["get", "list", "watch", "create", "update", "patch", "delete", "attach"]
+    - apiGroups: [""]
+      resources: ["configmaps"]
+      verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+
+serviceAccount:
+  create: true
+  name: "gitlab-runner"

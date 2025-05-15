@@ -124,6 +124,43 @@ helm upgrade prometheus prometheus-community/kube-prometheus-stack -n monitoring
 10. Добавляем дашборды для Kubernetes - ID 315, убеждаемся, что метрики есть
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/monitoring/4.png)
 
+11. Разврачиваем тестовое приложение
+Применяем манифесты
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/2.png)
 
+Приложение открывается по http
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png)
 
 ### Установка и настройка CI/CD
+
+1. Добавил репозиторий Gitlab
+```
+helm repo add gitlab https://charts.gitlab.io
+helm repo update
+```
+
+2. Создал в своём репозиторий https://gitlab.com/garrkiss/test-app gitlab-runner для получения токена, чтобы развернуть его в Kubernetes
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png)
+
+3. Сделан [values.yaml](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png) с полученным токеном и параметрами для настройки gitlab-runner
+
+4. Применил изменения
+```
+helm upgrade gitlab-runner gitlab/gitlab-runner --namespace gitlab-runner -f values.yaml
+```
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png)
+
+1. Cделал [.gitlab-ci.yml ]() 
+
+### Demo
+1. Добавил текст v2 рядом с EEBAKULEV в index.html и выполнил
+```
+git add . && git commit -m "gitlab" && git push
+```
+обновился образ в Registry
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png)
+
+добавил тег
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png)
+git tag v1.0.11 && git push origin v1.0.11 и приложение развернулось с v2
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png)
