@@ -126,7 +126,7 @@ helm upgrade prometheus prometheus-community/kube-prometheus-stack -n monitoring
 10. Добавляем дашборды для Kubernetes - ID 315, убеждаемся, что метрики есть
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/monitoring/4.png)
 
-11. Разврачиваем тестовое приложение
+11. Разврачиваем тестовое приложение - [Манифесты приложения](https://github.com/garrkiss/diplom/tree/main/k8s-test-app)
 Применяем манифесты
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/test-app/2.png)
 
