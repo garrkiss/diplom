@@ -57,9 +57,14 @@ helm_enabled: true
 kubeconfig_localhost: true
 ````
 
-1. Запускаем ansible-playbook
+3. Запускаем ansible-playbook
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/kuberspray/1.png)
 
+Плейбук успешно отработал
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/kuberspray/2.png)
+
+Копируем из каталога папки кластера admin.conf в .kube и проверяем командой kubectl get pods --all-namespaces
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/kuberspray/3.png)
 
 
 
