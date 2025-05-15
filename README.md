@@ -142,7 +142,7 @@ helm repo update
 2. Создал в своём репозиторий https://gitlab.com/garrkiss/test-app gitlab-runner для получения токена, чтобы развернуть его в Kubernetes
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/111.png)
 
-3. Сделан [values.yaml](https://github.com/garrkiss/diplom/blob/main/img/test-app/3.png) с полученным токеном и параметрами для настройки gitlab-runner
+3. Сделан [values.yaml](https://github.com/garrkiss/diplom/blob/main/cicd/values.yaml) с полученным токеном и параметрами для настройки gitlab-runner
 
 4. Применил изменения
 ```
@@ -151,7 +151,7 @@ helm upgrade gitlab-runner gitlab/gitlab-runner --namespace gitlab-runner -f val
 Проверил работу пода gitlab-runner
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/image.png)
 
-5. Cделал [.gitlab-ci.yml ]() 
+5. Cделал [.gitlab-ci.yml ](https://github.com/garrkiss/diplom/blob/main/cicd/.gitlab-ci.yaml) 
 
 6. Добавил переменные в Gitlab
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/12.png)
