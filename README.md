@@ -47,12 +47,17 @@ cp -rfp inventory/sample inventory/mycluster
 ```
 2. Вносим изменения в конфигурацию
    
-- Включаем параметры 
+- Включаем параметры в addons.yaml
 ```  
 ingress_nginx_enabled: true
 helm_enabled: true
 ````
-3. Запускаем ansible-playbook
+- Включаем параметры в k8s-cluster.yaml
+````
+kubeconfig_localhost: true
+````
+
+1. Запускаем ansible-playbook
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/kuberspray/1.png)
 
 
