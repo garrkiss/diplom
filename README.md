@@ -120,7 +120,7 @@ grafana:
 ```
 helm upgrade prometheus prometheus-community/kube-prometheus-stack -n monitoring -f values.yaml
 ```
-9. Проверяем открывается ли интерфейс графаны
+9. Проверяем открывается ли интерфейс графаны http://89.169.151.16:31000/login
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/monitoring/3.png)
 
 10. Добавляем дашборды для Kubernetes - ID 315, убеждаемся, что метрики есть
@@ -180,5 +180,8 @@ git tag v1.0.11 && git push origin v1.0.11
 Pipline успешно отработали
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/4.png)
 
-Сайт открытся с версией в тексте V2
+Сайт http://89.169.151.16 открытся с версией в тексте V2
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/6.png)
+
+В [DockerHub](https://hub.docker.com/repository/docker/garrkiss/test-app/tags) есть приложение с версией v1.0.11
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/cicd/656.png)
