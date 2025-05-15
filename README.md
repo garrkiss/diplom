@@ -53,7 +53,7 @@ ingress_nginx_enabled: true
 helm_enabled: true
 ````
 3. Запускаем ansible-playbook
-   
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/kuberspray/1.png)
 
 
 
