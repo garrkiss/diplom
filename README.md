@@ -71,6 +71,7 @@ kubeconfig_localhost: true
 
 Запушил код в [Gitlab](https://gitlab.com/garrkiss/test-app)
 В качестве Registy выбран [Docker hub](https://hub.docker.com/repository/docker/garrkiss/test-app)
+![Скрин]https://github.com/garrkiss/diplom/blob/main/img/test-app/1.png
 
 
 ### Подготовка cистемы мониторинга и деплой приложения
