@@ -17,7 +17,7 @@
 terraform output secret_key
 ```
 
-2. Подключаем S3 для хранения стейт файла, создаем сеть, инфраструктуру - [Infrastructure](https://github.com/garrkiss/diplom/tree/main/terraform/infrastructure)
+2. Подключаем S3 для хранения стейт файла, создаем сети, инфраструктуру и генерируем host.yaml для Kubersray - [Infrastructure](https://github.com/garrkiss/diplom/tree/main/terraform/infrastructure)
 
 
 [Файл]() 
