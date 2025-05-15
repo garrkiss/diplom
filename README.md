@@ -119,10 +119,10 @@ grafana:
 helm upgrade prometheus prometheus-community/kube-prometheus-stack -n monitoring -f values.yaml
 ```
 9. Проверяем открывается ли интерфейс графаны
-![Скрин]https://github.com/garrkiss/diplom/blob/main/img/monitoring/3.png
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/monitoring/3.png)
 
 10. Добавляем дашборды для Kubernetes - ID 315, убеждаемся, что метрики есть
-![Скрин]https://github.com/garrkiss/diplom/blob/main/img/monitoring/4.png
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/monitoring/4.png)
 
 
 
