@@ -7,17 +7,17 @@
 ![Скрин](https://github.com/garrkiss/diplom/blob/main/img/backend/1.png)
 
 Бакет появился на Yandex Cloud
-![Скрин](https://github.com/garrkiss/diplom/blob/main/img/backend/1.png)
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/backend/2.png)
 
 Пользователь создан на Yandex Cloud
-![Скрин](https://github.com/garrkiss/diplom/blob/main/img/backend/1.png)
+![Скрин](https://github.com/garrkiss/diplom/blob/main/img/backend/3.png)
 
 Выведем secret_key для передачи в другой terraform для инфраструктуры
 ```
 terraform output secret_key
 ```
 
-2. Подключаем S3 для хранения стейт файла, создаем сеть, инфраструктуру - [Backend](https://github.com/garrkiss/diplom/tree/main/terraform/backend)
+2. Подключаем S3 для хранения стейт файла, создаем сеть, инфраструктуру - [Infrastructure](https://github.com/garrkiss/diplom/tree/main/terraform/infrastructure)
 
 
 [Файл]() 
