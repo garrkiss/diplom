@@ -37,6 +37,8 @@ terraform output secret_key
 
 1. Подготавливаем Kuberspray
 
+[Ansible Kubespray](https://github.com/garrkiss/diplom/tree/main/ansible)
+
 ```
 git clone https://github.com/kubernetes-sigs/kubespray
 sudo apt install python3-pip
