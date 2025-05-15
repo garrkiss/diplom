@@ -35,6 +35,18 @@ terraform output secret_key
 
 ### Создание Kubernetes кластера
 
+1. Подготавливаем Kuberspray
+
+```
+git clone https://github.com/kubernetes-sigs/kubespray
+sudo apt install python3-pip
+source venv/bin/activate
+cd kubespray/
+pip3 install -r requirements.txt
+cp -rfp inventory/sample inventory/mycluster
+```
+
+
 
 
 ### Создание тестового приложения
